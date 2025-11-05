@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Chat Widget</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+   
+    .chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    .chat-window {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      background: #4f46e5;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    .chat-input-area {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      outline: none;
+    }
+
+    .send-btn {
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 0 15px;
+      cursor: pointer;
+    }
+
+    .message {
+      margin: 8px 0;
+    }
+
+    .user { text-align: right; color: #4f46e5; }
+    .agent { text-align: left; color: #333; }
+  </style>
+</head>
+<body>
+
+  
+  <button class="chat-button" id="chatButton">💬</button>
+  
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">Support Chat</div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="agent message">Hi there! How can I help you?</div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Type a message...">
+      <button class="send-btn" id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <script src = "app.js"></script>;
+</body>
+</html>
