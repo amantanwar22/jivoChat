@@ -20,11 +20,20 @@ $(document).ready(function() {
         $("#chatInput").val('');
 
         setTimeout(function() {
-        let randomIndex = Math.floor(Math.random() * responses.length);
-        let reply = responses[randomIndex];
-
-        $("#chatMessages").append(`<div class="agent message">${reply}</div>`);
-        $("#chatMessages").scrollTop($("#chatMessages")[0].scrollHeight);//this 0 gives the first real dom not the object
+  
+  $("#chatMessages").append('<div class="agent message typing-indicator"><span></span><span></span><span></span></div>');
+  $("#chatMessages").scrollTop($("#chatMessages")[0].scrollHeight);
+  
+  setTimeout(function() {
+    
+    $(".typing-indicator").remove();
+    
+   
+    let randomIndex = Math.floor(Math.random() * responses.length);
+    let reply = responses[randomIndex];
+    $("#chatMessages").append(`<div class="agent message">${reply}</div>`);
+    $("#chatMessages").scrollTop($("#chatMessages")[0].scrollHeight);
+  }, 1500);
 }, 1000);
 
       }
